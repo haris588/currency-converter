@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    margin: 0 auto;
+    background: rgb(230, 230, 228);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+}
+
+.container {
+    width: 95%;
+}
+
+.title {
+    padding: 1em 1em 0 1em;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.subtitle {
+    padding: 1em;
+    text-align: center;
+}
+
+.inputContainer {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    margin: 0 auto;
+    align-items: center;
+}
+
+label {
+    padding: 1em;
+}
+
+.inputBox {
+    border: 0;
+    background: rgba(143, 127, 107, 0.226);
+    padding: 0.7em;
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    max-width: 60px;
+    text-align: center;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.btn {
+    font-family: inherit;
+    padding: 1em 2.5em;
+    font-size: 1rem;
+    border: 0;
+    background: rgb(153, 187, 201);
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    transition: all 250ms;
+    font-weight: 700;
+    margin-left: 1em
+}
+
+.btn:focus, .btn:hover {
+    transform: scale(1.05);
+    background: rgb(118, 160, 180);
+}
+
+.resultContainer {
+    margin: 0 auto;
+}
+
+.convertedAmount {
+    font-size: 1.3rem;
+    padding: 1em;
+    text-align: center;
+}
+
+.currencyTypeList {
+    display: flex;
+    width: 50%;
+    padding: 1em;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+ul {
+    margin: 0 1em;
+}
+
+ul li {
+    list-style: none;
+    color: rgb(182, 182, 178);
+    text-align: left;
+    padding: 0.3em;
+}
+
+.moreCodes {
+    color: rgb(182, 182, 178);
+    text-align: center;
+    padding: 1em;
+}
+
+.moreCodes a {
+    color: rgb(141, 141, 138);
+}
+
+@media (max-width: 720px) {
+    body {
+        justify-content: space-between;
+    }
+    .inputContainer {
+        flex-direction: column;
+    }
+    .currencyTypeList {
+        flex-direction: column;
+    }
+    .btn {
+        margin: 2em 0 0 0;
+    }
+}

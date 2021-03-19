@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="style.css" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Converter</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1 class="title">Currency Converter</h1>
+        <p class="subtitle">Check the latest exchange rates now!</p>
+
+        <div class="inputContainer">
+
+            <label class="label" for="currencyAmountInputFrom">Amount:</label>
+            <input class="inputBox" type="number" min=0 id="currencyAmountInputFrom" />
+
+            <label class="label" for="currencyFrom">From:</label>
+            <input class="inputBox" list="currencyListFrom" name="currencyFrom" id="currencyFrom" />
+
+            <datalist id="currencyListFrom">
+                <option value="USD">
+                <option value="EUR">
+                <option value="GBP">
+                <option value="INR">
+                <option value="AUD">
+                <option value="CHF">
+            </datalist>
+
+            <label class="label" for="currencyTo">To:</label>
+            <input class="inputBox" list="currencyListTo" name="currencyTo" id="currencyTo" />
+
+            <datalist id="currencyListTo">
+                <option value="USD">
+                <option value="EUR">
+                <option value="GBP">
+                <option value="INR">
+                <option value="AUD">
+                <option value="CHF">
+            </datalist>
+
+            <button class="btn" id="btnConvert">CONVERT</button>
+        </div>
+
+        <div class="resultContainer"></div>
+
+        <div class="currencyTypeList">
+
+            <ul>
+                <li>USD - US Dollar</li>
+                <li>EUR - Euro</li>
+                <li>GBP - British Pound</li>
+                <li>INR - Indian Rupee</li>
+                <li>AUD - Australian Dollar</li>
+                <li>CAD - Canadian Dollar</li>
+                <li>SGD - Singapore Dollar</li>
+                <li>CHF - Swiss Franc</li>
+
+            </ul>
+
+            <ul>
+                <li>DKK - Denmark Krone</li>
+                <li>RUB - Russia Ruble</li>
+                <li>SEK - Sweden Krona</li>
+                <li>UAH - Ukraine Hryvnia</li>
+                <li>MYR - Malaysian Ringgit</li>
+                <li>JPY - Japanese Yen</li>
+                <li>CNY - Chinese Yuan Renminbi</li>
+            </ul>
+
+        </div>
+
+        <p class="moreCodes">All currency codes: <a href="https://www.xe.com/iso4217.php" target=_blank>https://www.xe.com/iso4217.php</a></p>
+    </div>
+
+    <script src='api.js'></script>
+    <script src="script.js"></script>
+</body>
+
+
+
+</html>
