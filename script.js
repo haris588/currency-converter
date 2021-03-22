@@ -1,3 +1,5 @@
+const API_KEY = '0c707e58c90fe6be18d0a972'
+
 const currencyFromInput = document.getElementById('currencyFrom')
 const currencyToInput = document.getElementById('currencyTo')
 const currencyAmountInput = document.getElementById('currencyAmountInputFrom')
