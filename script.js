@@ -1,20 +1,20 @@
 const currencyFromInput = document.getElementById('currencyFrom')
 const currencyToInput = document.getElementById('currencyTo')
 const currencyAmountInput = document.getElementById('currencyAmountInputFrom')
-const btnConvert = document.getElementById('btnConvert')
 const resultContainer = document.querySelector('.resultContainer')
+const inputBox = Array.from(document.querySelectorAll('.inputBox'))
+const form = document.querySelector('.form')
+const btnConvert = document.getElementById('btnConvert')
 
 let currencyFrom,
     currencyTo,
     currencyAmount
 
 const exchange = async () => {
-    const api = `https://v6.exchangerate-api.com/v6/${API_KEY}/latest/${currencyFrom}` //<---- currency FROM
-
+    const api = `https://v6.exchangerate-api.com/v6/${API_KEY}/latest/${currencyFrom}`
     const promise = await fetch(api)
     const apiData = await promise.json()
     const { conversion_rates } = apiData
-    // currency FROM * coversion_rates.TO
 
     const convert = currencyAmount * conversion_rates[currencyTo]
 
@@ -24,7 +24,17 @@ const exchange = async () => {
 
     reset()
 
-    return resultContainer.appendChild(p)
+    resultContainer.appendChild(p)
+}
+
+const error = () => {
+    inputBox.forEach(input => {
+        if (!input.value) {
+            input.classList.add('error')
+        } else {
+            input.classList.remove('error')
+        }
+    })
 }
 
 const reset = () => {
@@ -45,8 +55,12 @@ currencyToInput.addEventListener('change', (e) => {
 })
 
 currencyAmountInput.addEventListener('change', (e) => {
-    currencyAmount = e.target.value
+    currencyAmount = Number(e.target.value).toFixed(2)
 })
 
-btnConvert.addEventListener('click', exchange)
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
+    exchange()
+})
 
+btnConvert.addEventListener('click', error)
